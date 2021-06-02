@@ -1,0 +1,39 @@
+<script>
+
+	class Person {
+		constructor(name) {
+			this._name = name;
+		}
+		get info() {
+			return this._name;
+		}
+		set info(input) {
+			this._name = input;
+		}
+	}
+	
+	class Employee extends Person {
+		constructor(name, job) {
+			super(name);
+			this._job = job;
+		}
+		get info(){
+			return this._job;
+		}
+		set info(input){
+			this._job = input;
+		}
+
+		toString(){
+			return this._name + " : " + this._job;
+		}
+	}
+
+	var e1 = new Employee("Scott","Developer");
+
+	var e2 = new Employee("Mary","Engineering");
+
+	alert(e1.toString() + "\n" + e2.toString());
+
+</script>
+

@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script>
+	function makeSquare(leftX, leftY, rightX, rightY) {
+		var willReturn = {
+			좌x: leftX ,
+			좌y: leftY,
+			우x: rightX,
+			우y: rightY,
+		
+			Area: function () {
+				return Math.abs(this.좌x - this.우x) * Math.abs(this.좌y- this.우y);
+			},
+			Circumstance: function () {
+				return Math.abs(this.좌x - this.우x) * 2 + Math.abs(this.좌y - this.우y) * 2;
+			},
+			toString: function () {
+				return 'Area : (' + this.좌x + ',' + this.좌y + ') to (' + this.우x +',' + this.우y + ') = ' + this.Area() +'\n' + 'Circumstance : (' + this.좌x + ',' + this.좌y+ ') to (' + this.우x+',' + this.우y + ') = ' +  this.Circumstance();
+			}
+
+		};
+		return willReturn;
+	}
+var square = [];
+square.push(makeSquare(100, 200, 150, 250));
+square.push(makeSquare(50, 50, 100, 400));
+square.push(makeSquare(45, 100, 10, 50));
+var output = 'Area and Circumstance\n';
+for (var i in square) {
+	output += square[i].toString() + '\n' + '\n';
+}       
+alert(output);
+</script>    
+
