@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-3.1.1.js">
+  </script>
+  <script>
+    $(function () {
+      var welcomeSection = $('.welcome-section'),
+        enterButton = welcomeSection.find('.enter-button');
+
+      setTimeout(function () {
+        welcomeSection.removeClass('content-hidden');
+      }, 800);
+      enterButton.on('click', function (e) {
+        e.preventDefault();
+        welcomeSection.fadeOut();
+      })
+    })
+  </script>
+</head>
+<style>
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    list-style-type: none;
+    font-family: 'Pacifico', cursive;
+
+  }
+
+  .nav-item {
+    padding: 15px;
+    cursor: pointer;
+  }
+
+  #mainid {
+    margin-left: 350px;
+  }
+
+  #mainmy {
+    margin-left: 100px;
+  }
+
+  #maincat {
+    margin-left: 100px;
+  }
+
+  #maindraw {
+    margin-left: 100px;
+  }
+
+  .nav-item a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav-item:nth-child(1) {
+    background-color: darkgrey;
+  }
+
+  .nav-item:hover {
+    background-color: grey;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+  }
+
+  header {
+    margin-top: 80px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-weight: 500;
+    background: rgb(188, 226, 250);
+    background: -moz-linear-gradient(90deg, rgba(188, 226, 250, 1) 8%, rgba(146, 251, 255, 1) 77%);
+    background: -webkit-linear-gradient(90deg, rgba(188, 226, 250, 1) 8%, rgba(146, 251, 255, 1) 77%);
+    background: linear-gradient(90deg, rgba(188, 226, 250, 1) 8%, rgba(146, 251, 255, 1) 77%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bce2fa", endColorstr="#92fbff", GradientType=1);
+    height: 100vh;
+  }
+
+  .introduce1 {
+    position: absolute;
+    font-weight: lighter;
+    font-size: 40px;
+    color: white;
+    top: 100px;
+    left: 530px;
+  }
+
+  .welcome-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .content-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .fly-in-text {
+    list-style: none;
+  }
+
+  .fly-in-text li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 5em;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+
+  .fly-in-text li:nth-child(5) {
+    margin-right: 0;
+  }
+
+  .enter-button {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    color: #F5BB4E;
+    opacity: 1;
+    margin-top: 30px;
+    transition: all 1s ease 3s;
+  }
+
+  .content-hidden .fly-in-text li {
+    opacity: 0;
+  }
+
+  .content-hidden .fly-in-text li:nth-child(1) {
+    transform: translate3d(-60px, 0, 0);
+  }
+
+  .content-hidden .fly-in-text li:nth-child(2) {
+    transform: translate3d(-30px, 0, 0);
+  }
+
+  .content-hidden .fly-in-text li:nth-child(3) {
+    transform: translate3d(0px, 0, 0);
+  }
+
+  .content-hidden .fly-in-text li:nth-child(4) {
+    transform: translate3d(30px, 0, 0);
+  }
+
+  .content-hidden .fly-in-text li:nth-child(5) {
+    transform: translate3d(60px, 0, 0);
+  }
+
+  .content-hidden .enter-button {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  #intro1 {
+    position: absolute;
+    top: 450px;
+    left: 450px;
+    font-size: 20px;
+    color: white;
+  }
+</style>
+
+<body>
+  <nav>
+    <ul class="nav-container">
+      <li class="nav-item"> <a href="">Junseok's Homepage</a></li>
+      <li class="nav-item" , id="mainid"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/mainpage.html">Main</a>
+      </li>
+      <li class="nav-item" , id="mainmy"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/mypage.html">My</a> </li>
+      <li class="nav-item" , id="maincat"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/cat.html">Cat</a> </li>
+      <li class="nav-item" , id="maindraw"> <a
+          href="http://classnet.mju.ac.kr/~s60161873/pro/shopping.html">Shopping</a>
+      </li>
+      <ul>
+  </nav>
+  <div class="introduce1">
+    <h1>Welcome to</h1>
+    <h1>Junseok's</h1>
+    <h1>Homepage!</h1>
+  </div>
+  <h1 id="intro1">This page was created for the INTERNET PROGRAMMING project.</h1>
+
+  <div class="welcome-section content-hidden">
+    <div class="content-wrap">
+      <ul class="fly-in-text">
+        <li>H</li>
+        <li>E</li>
+        <li>L</li>
+        <li>L</li>
+        <li>O</li>
+
+      </ul>
+      <a href="#" class="enter-button">Enter</a>
+    </div>
+  </div>
+</body>
+
+</html>

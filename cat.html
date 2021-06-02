@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-3.1.1.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var now_img;
+		var last_img;
+		window.onload = function () {
+			setInterval("fn_change()", 3000);
+		}
+		function fn_change() {
+			now_img = $("img").eq(0);
+			last_img = $("img").eq(-1);
+			last_img.addClass("z-idx").css("opacity", 0).animate({ "opacity": 1 }, 1000,
+				function () {
+					$(".img_area").prepend(last_img);
+					now_img.removeClass("z-idx");
+				});
+		}
+	</script>
+	<style>
+		body {
+			background: #ECE9E6;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			margin: 0;
+		}
+
+		.nav-container {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: lightgrey;
+			list-style-type: none;
+			font-family: 'Pacifico', cursive;
+		}
+
+		.nav-item {
+			padding: 15px;
+			cursor: pointer;
+		}
+
+		#mainid {
+			margin-left: 350px;
+		}
+
+		#mainmy {
+			margin-left: 100px;
+		}
+
+		#maincat {
+			margin-left: 100px;
+		}
+
+		#maindraw {
+			margin-left: 100px;
+		}
+
+		.nav-item a {
+			text-align: center;
+			text-decoration: none;
+			color: white;
+		}
+
+		.nav-item:nth-child(1) {
+			background-color: darkgrey;
+		}
+
+		.nav-item:hover {
+			background-color: grey;
+		}
+
+		.nav-container {
+			position: fixed;
+			top: 0;
+		}
+
+		header {
+			margin-top: 80px;
+		}
+
+		img {
+			position: fixed;
+			width: 450px;
+			height: 450px;
+			left: 25px;
+			top: 200px;
+			margin: 50;
+		}
+
+		.z-idx {
+			z-index: 1;
+		}
+
+		#vid1 {
+			position: fixed;
+			left: 500px;
+			top: 200px;
+		}
+
+		#vid2 {
+			position: absolute;
+			left: 720px;
+			top: 200px;
+		}
+
+		#vid3 {
+			position: absolute;
+			left: 500px;
+			top: 425px;
+		}
+
+		#vid4 {
+			position: absolute;
+			left: 720px;
+			top: 425px;
+		}
+
+		table.type09 {
+			border-collapse: collapse;
+			text-align: left;
+			line-height: 1.5;
+			position: fixed;
+			left: 950px;
+			top: 250px;
+			margin-Bottom: 100px;
+		}
+
+		table.type09 thead th {
+			padding: 10px;
+			font-weight: bold;
+			vertical-align: top;
+			color: #369;
+			border-bottom: 3px solid #036;
+		}
+
+		table.type09 tbody th {
+			width: 150px;
+			padding: 10px;
+			font-weight: bold;
+			vertical-align: top;
+			border-bottom: 1px solid #ccc;
+		}
+
+		table.type09 td {
+			width: 350px;
+			padding: 10px;
+			vertical-align: top;
+			border-bottom: 1px solid #ccc;
+		}
+
+		h1 {
+			font-size: 20px;
+		}
+
+		#mimi {
+			position: absolute;
+			left: 585px;
+			top: 385px;
+		}
+
+		#whoare {
+			position: absolute;
+			left: 810px;
+			top: 385px;
+		}
+
+		#somang {
+			position: absolute;
+			left: 575px;
+			top: 610px;
+		}
+
+		#hayang {
+			position: absolute;
+			left: 800px;
+			top: 610px;
+		}
+	</style>
+</head>
+<table class="type09">
+	<thead>
+		<tr>
+			<th scope="cols">이름</th>
+			<th scope="cols">특징</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">미미</th>
+			<td>우리집 주변 출몰, 개냥이</td>
+		</tr>
+		<tr>
+			<th scope="row">???</th>
+			<td>함박관 앞 가끔 출몰, 이름 모름, 개냥이</td>
+		</tr>
+		<tr>
+			<th scope="row">소망이</th>
+			<td>제주도 어느 과일집 서식, 초초 개냥이</td>
+		</tr>
+		<tr>
+			<th scope="row">하얗이</th>
+			<td>스쿱키 앞 출몰, 살짝 개냥이</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<body>
+	<div class="img_area">
+		<img src="http://classnet.mju.ac.kr/~s60161873/pro/mimi.jpg" , alt="image1" , class="z-idx" />
+		<img src="http://classnet.mju.ac.kr/~s60161873/pro/white.jpg" , alt="image2" />
+		<img src="http://classnet.mju.ac.kr/~s60161873/pro/somang.jpg" , alt="image3" />
+		<img src="http://classnet.mju.ac.kr/~s60161873/pro/whoyouare.jpg" , alt="image4" />
+	</div>
+	<video src="http://classnet.mju.ac.kr/~s60161873/pro/mimi.mp4" width="200" height="200" type="video/mp4" id="vid1"
+		controls></video></p>
+	<video src="http://classnet.mju.ac.kr/~s60161873/pro/whoyouare.mp4" width="200" height="200" type="video/mp4"
+		id="vid2" controls></video></p>
+	<video src="http://classnet.mju.ac.kr/~s60161873/pro/somang.mp4" width="200" height="200" type="video/mp4"
+		id="vid3" controls></video></p>
+	<video src="http://classnet.mju.ac.kr/~s60161873/pro/white.mp4" width="200" height="200" type="video/mp4"
+		id="vid4" controls></video></p>
+	<h1 id="mimi">미미</h1>
+	<h1 id="whoare">???</h1>
+	<h1 id="somang">소망이</h1>
+	<h1 id="hayang">하얗이</h1>
+</body>
+<nav>
+	<ul class="nav-container">
+		<li class="nav-item"> <a href="">Junseok's Homepage</a></li>
+		<li class="nav-item" , id="mainid"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/mainpage.html">Main</a>
+		</li>
+		<li class="nav-item" , id="mainmy"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/mypage.html">My</a> </li>
+		<li class="nav-item" , id="maincat"> <a href="http://classnet.mju.ac.kr/~s60161873/pro/cat.html">Cat</a> </li>
+		<li class="nav-item" , id="maindraw"> <a
+				href="http://classnet.mju.ac.kr/~s60161873/pro/shopping.html">Shopping</a> </li>
+		<ul>
+</nav>
+
+</html>
